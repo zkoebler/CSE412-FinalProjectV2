@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Map</title>
+</head>
+<body>
+    <h1>CSE 412 Final Project</h1>
+    <h2>Project Description:</h2>
+    <p>This project allows users to visualize data from the <a href="https://data.world/city-of-ny/pdiy-9ae5/workspace/file?filename=bureau-of-fire-prevention-certificates-of-fitness-1.csv">
+        "bureau-of-fire-prevention-certificates-of-fitness-1.csv"</a> dataset. 
+        The dataset is stored within a PostgreSQL database as per the project requiremnts, 
+        and our NodeJS api provided in the backend folder allows for 3 GET requests that implement SQL to return data from the database.
+    </p>
+    <div>
+        <label>How to use this appilcation: </label>
+        <ol>
+            <li>Ensure the backend api is started by running "node express.js" in the backend folder. This should connect to the database URL automatically assuming it is activiated.</li>
+            <li>Select a certificate from the control below the map.</li>
+            <li>Select the name of a person that holds that certificate or click on a marker on the map to view information about them.</li>
+            <li>Select a new person or certificate.</li>
+        </ol>
+    </div>
+    
+
+    <div id="googleMap" style="width: 100%; height: 400px;"></div>
+
+    <div>
+        <div>
+            <label>Choose Certificate:</label>
+            <select name="certificates" id="certificates">
+                <option disabled selected value> -- select a certificate -- </option>
+            </select>
+        </div>
+
+        <div>
+            <label>Choose Person: </label>
+            <select name="people" id="people">
+                <option disabled selected value> -- select a person -- </option>
+            </select>
+        </div>
+
+        <div>
+            <h3>Information for certificate holder</h3>
+            <div>
+                <label>Holder Name: </label>
+                <label id="holder_name"></label>
+            </div>
+            <div>
+                <label>Certificate Expires On: </label>
+                <label id="expires_on"></label>
+            </div>
+            <div>
+                <label>Address: </label>
+                <label id="address"></label>
+            </div>
+            <div>
+                <label>Latitude: </label>
+                <label id="latitude"></label>
+            </div>
+            <div>
+                <label>Longitude: </label>
+                <label id="longitude"></label>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="See Document for String with API Key"></script>
+    <script src="script.js"></script>
+</body>
+</html>
